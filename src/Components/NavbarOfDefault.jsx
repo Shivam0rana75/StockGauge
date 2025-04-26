@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.png'
+import { Link } from 'react-router-dom'  
+
 const Navbar = () => {
   return (
     <nav className='font-sans'>
@@ -15,8 +17,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='flex flex-row items-center'>
-                <button className='mx-1 my-1 bg-black text-green-500 font-medium px-3 py-1 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black transition-all duration-300 border cursor-pointer'>SignUp</button>
-                <button className='mx-1 my-1 bg-green-500 text-black font-medium px-3 py-1 rounded-lg shadow-md border-2  hover:bg-amber-50 focus:outline-none focus:ring-2 focus:ring-black transition-all duration-300 cursor-pointer'>Login</button>
+                <button className='mx-1 my-1 bg-black text-green-500 font-medium px-3 py-1 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black transition-all duration-300 border cursor-pointer'> <Link to='register'>SignUp</Link></button>
+                <button className='mx-1 my-1 bg-green-500 text-black font-medium px-3 py-1 rounded-lg shadow-md border-2  hover:bg-amber-50 focus:outline-none focus:ring-2 focus:ring-black transition-all duration-300 cursor-pointer'> <Link to='login'>Login</Link> </button>
                 </div>
             
             </div>

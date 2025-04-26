@@ -2,7 +2,7 @@ import React from 'react';
 import Video from './Video';
 import video from '../assets/bgVideo.mp4'
 import video2 from '../assets/bg2.mp4'
-
+import { Link } from 'react-router-dom';
 const BodyOfDefault = () => {
   return (
     <div className='bg-black space-y-35'>
@@ -29,7 +29,7 @@ const BodyOfDefault = () => {
 
       <div className='flex flex-row justify-center py-10'>
       <button className="bg-green-500 hover:bg-green-600 text-black px-6 py-3 font-bold rounded-xl shadow-md transition-all duration-200 ease-in-out">
-          {'Get Started >'}
+          <Link to='/register' >{'Get Started >'}</Link> 
         </button>
       </div>
       
