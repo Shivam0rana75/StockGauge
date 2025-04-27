@@ -1,5 +1,11 @@
 import { configureStore , createSlice } from "@reduxjs/toolkit";
-const initialInputValue = {id: crypto.randomUUID()  , name : '' , StartDate : undefined , EndDate : undefined}  ;
+
+
+const initialInputValue = {id: crypto.randomUUID()  , name : '' , StartDate : undefined , EndDate : undefined} ;
+
+const initialValueForCharts = {meta : [] , values : []}
+
+
 const InputSlice = createSlice({
     name : 'Input Values',
     initialState : [initialInputValue],
@@ -26,11 +32,29 @@ const InputSlice = createSlice({
 })
 
 
+const ChartSlice = createSlice({
+    name : 'DataForCharts' ,
+    initialState :  initialValueForCharts ,
+    reducers : {
+        addDataforCharts(state , action){
+            const {meta , values} = action.payload;
+            state.meta = meta;
+            state.values = values
+
+        }
+    }
+})
+
+
+
+
 const Store = configureStore({
     reducer : {
-        input : InputSlice.reducer
+        input : InputSlice.reducer,
+        Charts : ChartSlice.reducer
     }
 })
 
 export default Store ;
 export const InputActions = InputSlice.actions;
+export const ChartActions = ChartSlice.actions

@@ -5,7 +5,6 @@ const StockInput = ({id  , StartDateValue , EndDateValue}) => {
   const dispatch = useDispatch();
   function handleInputChange(e){
     const {name , value } = e.target;
-    console.log(value)
     dispatch(InputActions.updateInputField({id  , name , value}));
   }
 
